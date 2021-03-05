@@ -41,9 +41,10 @@
         <ion-input
           [(ngModel)]="myTask"
           placeholder="Enter your list"
+
         ></ion-input>
-        <ion-button slot="end" shape="round" (click)="addTaskToFirebase()">
-          <ion-icon name="add" slot="icon-only"></ion-icon>
+        <ion-button *ngIf="myTask.length !== 0 " slot="end" shape="round" (click)="addTaskToFirebase()">
+          <ion-icon name="add" slot="icon-only" ></ion-icon>
         </ion-button>
       </ion-item>
     </ion-card>

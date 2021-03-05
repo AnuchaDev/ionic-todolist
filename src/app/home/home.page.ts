@@ -84,9 +84,12 @@ export class HomePage {
         {
           text: 'Edit',
           handler: (data) => {
-            console.log(data.task);
-            this.afDB.object('Tasks/' + key).update({ text: data.task });
-            location.reload(true);
+            if(data.task === ""){
+              return false;
+            }else{
+              this.afDB.object('Tasks/' + key).update({ text: data.task });
+              location.reload(true);
+            }
           },
         },
       ],
